@@ -11,7 +11,7 @@ jobs:
       shell: powershell.exe
     steps:
       - checkout
-	  - run: '&"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"'
+      - run: '&"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"'
       - run:
           name: "Eksekusi"
           shell: powershell.exe
