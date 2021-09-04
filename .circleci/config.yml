@@ -14,4 +14,4 @@ jobs:
       - run:
           name: "Eksekusi"
           shell: powershell.exe
-          command: .\coba.bat
+          command: .\true.bat
