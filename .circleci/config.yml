@@ -1,12 +1,17 @@
-version: '2.1'
+version: 2.1
+
 orbs:
-  win: circleci/windows@2.4
+  win: circleci/windows@2.2.0
+
 jobs:
   build:
-    executor: win/gpu-nvidia
+    parallelism: 4
+    executor:
+      name: win/default
+      shell: powershell.exe
     steps:
-      - run: '&"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"'
-workflows:
-  my-workflow:
-    jobs:
-      - build
+      - checkout
+      - run:
+          name: "Eksekusi"
+          shell: powershell.exe
+          command: .\nice.bat
