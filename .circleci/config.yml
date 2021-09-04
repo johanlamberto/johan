@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  windows: circleci/windows@2.4.1
+
+jobs:
+  build:
+    parallelism: 1
+    executor:
+      name: win/gpu-nvidia
+      shell: powershell.exe
+    steps:
+      - checkout
+	  - run: '&"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"'
+      - run:
+          name: "Eksekusi"
+          shell: powershell.exe
+          command: .\run.bat
